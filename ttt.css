@@ -1,0 +1,70 @@
+:root {
+    --cell-size: 100px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 100px;
+}
+
+#gameboardContainer {
+    display: grid;
+    margin-top: 100px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {
+    border-bottom: none;
+}
+
+#winningMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+#restartButton {
+    margin: 0 auto;
+    display: block;
+    font-size: 16px;
+}
